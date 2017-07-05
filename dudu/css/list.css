@@ -67,8 +67,10 @@
 						}
 						
 #main .mains dl dt:hover{
-transform:scale3d(2,2,2);
-background: #BEBDBB;
+						transform:scale(1.2);
+						opacity: 0.8;
+						transition: .7s;
+						background: #BEBDBB;
 		}	
 #main .mains dl dd{
 						padding-left: 16px;
@@ -112,7 +114,7 @@ background: #BEBDBB;
 							text-align: center;
 							line-height: 25px;
 							color: white;
-							font-size: 12px;							text-decoration: none;
+							font-size: 12px;							
 							cursor: pointer;
 							}		
 

@@ -180,8 +180,7 @@
 							top: 20px;
 							cursor: pointer;
 							height: 12px;
-							}	
-							
+							}								
 #main .mains{
 				width:1150px;
 				height:414px;
@@ -192,16 +191,19 @@
 					float:left;
 		}	
 #main .mains dl dt{
-	width:222px;
-	height:222px;
-	}
+					width:222px;
+					height:222px;
+					}
 #main .mains dl dt img{
 							width:222px;
 							height:222px;
 						}
 						
 #main .mains dl dt:hover{
-							transform:scale3d(2,2,2);
+							transform:scale(1.2);
+							transition:0.9s;
+							opacity: .7;
+							filter: alpha(opacity=70);							
 							background: #BEBDBB;
 						}	
 #main .mains dl dd{

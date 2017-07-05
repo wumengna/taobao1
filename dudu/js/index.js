@@ -273,5 +273,16 @@ function $(id){
         time = setInterval($("right").onclick,3000);
          console.log("鼠标移出，打开定时器,自动播放")
        };
-  
-  
+
+//显示搜索框的内容
+jQuery("#sousuo").click(function(){
+	 jQuery("#sousuo").animate({ width: "300px",},1000);
+	 
+	jQuery("#s1").css({"margin-top":"8px"});
+	jQuery("#yinc").show();
+});
+jQuery("#sousuo").focusout(function(){
+	jQuery("#sousuo").animate({ width: "210px"},1000);
+	jQuery("#s1").css({"margin-top":"-25px"});
+	jQuery("#yinc").hide();
+});
