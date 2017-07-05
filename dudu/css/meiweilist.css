@@ -1,0 +1,381 @@
+@charset "utf-8";
+/* CSS Document */
+
+		
+/*==============小导航===================*/
+#nan1{
+		width:100%;
+		height:55px;
+		background: #F8F8F8;
+		position:relative;
+		margin-bottom: 60px;
+	}
+#nan1 .nanv{
+			width: 1150px;
+			margin: 0 auto;
+			line-height: 55px;
+			font-size: 14px;
+
+		}
+/*=================商品导航=========================*/
+#nan2{
+	width:1150px
+	height: 97px;
+	margin:0 auto;
+	margin-top:32px;
+	line-height: 48px;
+	}
+#nan2 .nan2-s{
+	 width:1150px;
+	 height:54px;
+	 margin:0 auto;
+	
+	}
+#nan2 .nan2-s ul{
+				height: 48px;
+				line-height: 48px;
+				margin:0 auto;
+				border-bottom: 1px solid #F8F8F8;
+				font-size: 14px;
+				color: #4A4A4A;
+				overflow: hidden;
+				}
+#nan2 .nan2-s ul li{ height: 30px;
+					line-height: 32px;
+					margin-right: 44px;
+					float: left;
+					}
+
+#nan2 .nan2-x{	 
+				 width:1150px;
+				 margin:0 auto;
+			}
+#nan2 .nan2-x ul li span{
+						display:block;
+						float: left;
+						line-height: 52px;
+						width: 85px;
+						}
+#nan2 .nan2-x ul li ol{width: 980px;
+						float: left;
+						padding-top: 12px;
+						padding-bottom: 12px;
+					
+						}
+#nan2 .nan2-x ul li ol li{
+							line-height: 32px;
+							margin-right: 44px;
+							float: left;
+							color: #4A4A4A;
+							}
+#nan2 .nan2-x ul li ol li #yincang{display:none;width: 980px;}
+
+
+#nan2 .nan2-x ul li ol li div  ul li{ float:left;
+							
+							line-height: 32px;
+							margin-right: 44px;
+							color: #4A4A4A;
+							}							
+#nan2 .nan2-x #next1{width: 12px;
+				height: 48px;
+				float: left;
+				}
+#nan2 .nan2-x #next1 img{width: 12px;
+					height: 9px;
+					cursor: pointer;
+					display:block;
+					margin-top: 20px;
+					transition: transform 0.4s;
+					}
+#nan2 .nan2-x #next2{width: 12px;
+				height: 48px;
+				float: left;
+				}
+#nan2 .nan2-x #next2 img{width: 12px;
+					height: 9px;
+					cursor: pointer;
+					display:none;
+					margin-top: 20px;
+					margin-left:-11px;
+					transition: transform 0.4s;
+					}
+/*===========main===========================*/
+#main{
+	width:100%;
+	overflow:hidden;
+	}
+#main .showlist{
+				 height:45px;
+				 margin:0 auto;
+				 position:relative;
+				 border-bottom:1px solid #f8f8f8;
+				 width:1150px;
+				 }
+#main .showlist ul{
+					float: right;
+					padding-right: 15px;
+					height: 45px;
+					padding-right:15px;
+					position: relative;
+					width: 128px;
+					cursor: pointer;
+					}
+#main .showlist ul #y{
+						text-align: center;
+						font-size: 14px;
+						height: 45px;
+						line-height: 45px;
+						color: #4A4A4A;
+						}
+#main .showlist ul #y1 {
+						text-align: center;
+						font-size: 14px;
+						border-left: 2px solid #F2F2F2;
+						border-right: 2px solid #F2F2F2;
+						height: 45px;
+						display:none;
+						line-height: 45px;
+						color: #4A4A4A;
+						}
+#main .showlist ul #y1:hover{ background:#f2f2f2;}						
+#main .showlist ul #y2:hover{ background:#f2f2f2;}						
+#main .showlist ul #y2{
+						text-align: center;
+						font-size: 14px;
+						border-left: 2px solid #F2F2F2;
+						border-right: 2px solid #F2F2F2;
+						height: 45px;
+						display:none;
+						line-height: 45px;
+						color: #4A4A4A;
+						}
+
+#main .showlist #dian1{
+						width: 24px;
+						height: 24px;
+						padding-top: 6px;
+						}
+#main .showlist #dian2{
+						width: 24px;
+						height: 24px;
+						padding-top: 6px;
+						}
+#main .showlist #dian1 img{
+							width: 12px;
+							cursor: pointer;
+							height: 7px;
+							cursor: pointer;
+							position: absolute;
+							right: 25px;
+							top: 20px;
+							
+							}						
+#main .showlist #dian2 img{
+							width: 7px;
+							cursor: pointer;
+							display:none;
+							position: absolute;
+							right: 25px;
+							top: 20px;
+							cursor: pointer;
+							height: 12px;
+							}	
+							
+#main .mains{
+				width:1150px;
+				height:414px;
+				margin: 0 auto;
+				margin-bottom: 10px;
+			}
+#main .mains dl{
+					float:left;
+		}	
+#main .mains dl dt{
+	width:222px;
+	height:222px;
+	}
+#main .mains dl dt img{
+							width:222px;
+							height:222px;
+						}
+						
+#main .mains dl dt:hover{
+							transform:scale3d(2,2,2);
+							background: #BEBDBB;
+						}	
+#main .mains dl dd{
+						padding-left: 16px;
+						padding-top: 11px;
+						position:relative;
+						padding-right: 16px;
+						height: 90px;
+						
+						}
+#main .mains dl dd:hover{
+	background:#f3f3f3;
+	}
+#main .mains dl dd h2{
+							font-size: 13px;
+							font-weight: normal;
+							color: #4A4A4A;
+							line-height: 16px;
+							height: 16px;
+							overflow: hidden;
+						}
+#main .mains dl dd span{
+							position: absolute;
+							width: 56px;
+							height: 56px;
+							text-align:center;
+							line-height:56px;
+							background: #000000;
+							opacity: 0.4;
+							border-radius: 50%;
+							left: 0px;
+							color:#fff;
+							top: -190px;
+							}								
+#main .mains dl dd h4{
+							font-size: 13px;
+							font-weight: normal;
+							color: #828282;
+							margin-bottom: 18px;
+							line-height: 16px;
+							height:16px;
+							overflow: hidden;
+						}		
+#main .mains dl dd a{
+							font-size: 14px;
+							color: #e74c3c;
+							margin-right: 16px;
+						}		
+#main .mains dl dd b{
+							font-size: 14px;
+							color: #828282;
+							font-weight:100;
+							text-decoration: line-through;
+							}		
+
+
+/*====================侧边栏===============================*/
+#aside{
+	position: fixed;
+	top: 300px;
+	width:65px;
+	height:180px;
+	right: 0px;
+	}
+#aside #aside-s{
+				width: 65px;
+				height: 66px;
+				border-radius: 3px;
+				background: #F8F8F8;
+				font-size: 14px;
+				cursor: pointer;
+				color: #4A4A4A;
+				z-index: 2;
+				}
+#aside #aside-s img{
+					display: block;
+					width: 45px;
+					padding-top: 10px;
+					height: 45px;
+					margin-left: 10px;
+					margin-top: 12px;
+					}
+					
+#chat{
+	width:340px;
+	height:450px;
+	position: absolute;
+	top: -250px;
+	box-shadow:0 0 5px 5px #bebebe;
+	left: -340px;
+	display:none;
+	background:#ccc;
+	z-index: 9999;
+	
+	}
+#aside #chat h3{
+	position:absolute;
+	line-height:38px;
+	width: 100%;
+	height: 38px;
+	background:#f4f4f4;
+	text-align:center;
+	color:#4a4a4a;
+	
+	}
+#aside #chat input{position: absolute;
+					top: 415px;
+					right: 10px;
+					width: 90px;
+					border: none;
+					height: 30px;
+					border-radius: 5px;
+					color: #fff;
+					background: #ccc;
+					}
+#aside #chat .chat3{
+					position: absolute;
+					display: block;
+					top: 417px;
+					right: 206px;
+					width: 125px;
+					font-size: 14px;
+					height: 27px;
+					line-height: 27px;
+					background: #fff;
+					color: #bebebe;
+				
+				}
+#aside #chat #span1{
+								position: absolute;
+								display: block;
+								top: 0;
+								height: 38px;
+								background: #f4f4f4;
+								right: 5px;
+								line-height: 38px;
+								color: #000;
+
+							}					
+#aside #chat .chat1{
+	width:100%;
+	height:300px;
+	resize:none;
+	padding:0;
+	margin:0;	
+	}					
+					
+#aside #chat .chat2{
+	width:100%;
+	height:150px;
+	resize:none;	
+
+	
+	}					
+						
+#aside #aside-x{
+					width: 65px;
+					height: 66px;
+					border-radius: 3px;
+					background: #F8F8F8;
+					font-size: 14px;
+					position:fixed;
+					cursor: pointer;
+					color: #4A4A4A;
+					margin-top:10px;
+					top:380px;
+					z-index: 10;
+				}
+#aside #aside-x img{
+					display: block;
+					width: 45px;
+					height: 45px;
+					margin-left: 10px;
+					margin-top: 12px;
+					}	
+	
+
