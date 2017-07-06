@@ -1,0 +1,21 @@
+{
+  "name": "dgd",
+  "version": "1.0.0",
+  "description": "sfdsd",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "asd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "sad"
+  },
+  "author": "",
+  "license": "ISC"
+}
