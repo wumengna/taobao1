@@ -36,26 +36,36 @@
 							}
 #main .main-r{
 			float: right;
-			width: 292px;
+			width: 345px;
 			color: #4A4A4A;
 			position:relative;
 			font-size: 18px;
 			display: inline;
 			margin-right: 32px;
-			margin-top: 70px;
+			margin-top: 15px;
 			}
-#main .main-r #phone1{	width: 260px;
+#main .main-r input{
+	width: 200px;
+	height: 34px;
+	margin-bottom: 30px;
+	
+	
+}
+#main .main-r #phone1{	width: 193px;
 						height: 34px;
 						font-size:12px;
 						color:#e74c3c;
+						margin-left: 75px;
 						line-height:56px;
 					}
 #main .main-r #photo{	width: 260px;
-						height: 34px;
-						font-size:12px;
+						height: 16px;
+						font-size:12px;						
 						color:#e74c3c;
-						margin-bottom:14px;
-						line-height:34px;
+						margin-top: -8px;
+						display: block;
+						line-height:38px;
+					
 					}
 #main .main-r #phone2{	width: 20px;
 						height: 20px;
@@ -69,11 +79,16 @@
 						left:270px;
 					}
 #main .main-r #phone{
-						width: 260px;
+						width: 193px;
 						height: 34px;
 						margin-bottom:20px;
 						margin-top:5px;
-					}			
+					}	
+#main .main-r #name1{
+	width: 200px;
+    height: 34px;
+    margin-bottom: 30px;	
+	}							
 #main .main-r input:nth-child(6){
 					width: 260px;
 					height: 34px;
@@ -86,8 +101,8 @@
 					text-indent: 6px;
 					border: 1px solid rgb(231, 76, 60);	
 				}
-#main .main-r input:nth-child(7){
-								width: 160px;
+#main .main-r #password1{
+								width: 200px;
 								height: 34px;
 								border: 1px solid #BEBDBB;
 								line-height: 34px;
@@ -98,64 +113,70 @@
 								background: #ffffff;
 								text-indent: 6px;
 								}
-#main .main-r input:nth-child(4){
-								width: 160px;
+#main .main-r #password2{
+								width: 193px;
 								height: 34px;
 								border: 1px solid #BEBDBB;
 								line-height: 34px;
 								border-radius: 3px;
-								margin-top:15px;
-								position:relative;
+								outline: none;
+								margin-bottom: 13px;
 								font-size: 13px;
 								background: #ffffff;
 								text-indent: 6px;
 								}
-#main .main-r input:nth-child(8){
-								width: 260px;
-								height: 36px;
-								background: #e74c3c;
-								color: white;
-								font-size: 14px;
-								text-align: center;
-								line-height: 36px;
-								font-weight: normal;
-								}
-#main .main-r input:nth-child(9){
-								width: 260px;
-								height: 36px;
-								background: #e74c3c;
-								color: white;
-								font-size: 14px;
-								border:none;
-								margin:20px 0px;
-								border-radius:5px;
-								text-align: center;
-								line-height: 36px;
-								font-weight: normal;
-								}
+#main .main-r #submit{
+						width: 260px;
+						height: 36px;
+						background: #e74c3c;
+						color: white;
+						border: none;
+						border-radius: 5px;
+						font-size: 14px;
+						text-align: center;
+						margin-top: 20px;
+						line-height: 36px;
+						font-weight: normal;
+						}
 
-#main .main-r span:nth-child(8){
-								width: 90px;
-								height: 34px;
-								font-size: 13px;
-								color: #e74c3c;
-								font-weight: normal;
-								line-height: 34px;
-								border: 1px solid #e74c3c;
-								text-align: center;
-								cursor: pointer;
-								border-radius: 3px;
-								display: inline-block;
-								}
+#main .main-r #span{
+					width: 115px;
+					height: 15px;
+					font-size: 12px;
+					color: #e74c3c;
+					font-weight: normal;														
+					display: inline-block;
+					}
+#main .main-r #span2{
+					width: 140px;
+					height: 15px;
+					font-size: 12px;
+					color: #e74c3c;
+					font-weight: normal;														
+					display: inline-block;
+					}
 #main .main-r #sp1{ position:relative;}
+#main .main-r #text{
+					width: 193px;
+					height: 34px;
+					border: 1px solid #BEBDBB;
+					line-height: 34px;
+					border-radius: 3px;
+					outline: none;
+					margin-bottom: 13px;
+					font-size: 13px;
+					background: #ffffff;
+					text-indent: 6px;
+					}
+
 #main .main-r #btn1{
-						width: 93px;
+						width: 70px;
 						height: 36px;
 						display: inline-block;
 						border-radius: 3px;
 						position: absolute;
-						top: -5px;
-						right: -100px;
+						
+						right: 70px;
 					}
 
 #main .main-r #denglu{

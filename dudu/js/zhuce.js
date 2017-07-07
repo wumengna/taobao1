@@ -12,22 +12,50 @@
 				$("phone1").innerHTML="";
 			}  
 	}
-	window.onload=function(){
-		changeyzm();
-	}
-	$("text").onblur=function(){
-			if($("text").value==$("btn1").innerHTML){
-				$("photo").innerHTML="√";
-			}else{
-				$("photo").innerHTML="请输入正确的图形验证码";
+	
+	$("name1").onblur=function(){
+		var name1=document.getElementById("name1").value;			
+			if(!(/^[a-zA-Z_]\d|\w{5,14}$/).test(name1)){ 
+				alert("请输入正确的用户名")
 			}
+		
+	}
+		$("password1").onblur=function(){
+		var name2=document.getElementById("password1").value;			
+			if(!(/[a-zA-Z_]\d|\w{6,14}$/).test(name2)){ 
+				$("span").innerHTML="请输入正确的密码";			
+			} else{
+				$("span").innerHTML="";	
+			}
+			
+	}
+		$("password2").onblur=function(){
+		var name3=document.getElementById("password2").value;
+		var name2=document.getElementById("password1").value;			
+			if(name3!=name2){
+				$("span2").innerHTML="请再次确认密码是否一致";	
+			}else{
+				$("span2").innerHTML="";
+			}			
 	}
 
-//验证码
-function test1(){
-		changeyzm();
+
+	//验证码
+	window.onload=function(){		
+		changeyzm();		
 	}
+	$("text").onblur=function(){
+			if($("text").value==$("btn1").value){
+				$("photo").value="√";
+			}else{
+				$("photo").value="请输入正确的图形验证码";
+			}
+	}
+	function test1(){
+			changeyzm();
+		}
 	function changeyzm(){
+	
 		var i=0;
 		var str="";
 		while(i<4){
@@ -38,9 +66,21 @@ function test1(){
 			}
 		}
 		str=str.toLowerCase(str);
-		document.getElementById("btn1").innerHTML=str;	
-	}
-
+		document.getElementById("btn1").value=str;	
+		}
+	
+//		$("submit").onclick=function(){
+//			if(/^1[34578]\d{9}$/).test(phone){
+//				if(/^[a-zA-Z_]\d|\w{5,14}$/).test(name1){
+//					if(/[a-zA-Z_]\d|\w{6,14}$/).test(name2){
+//						if(name3==name2){
+//							
+//						}
+//					}					
+//				}				
+//			}
+//			localhost.href="../index.html";
+//		}
 
 //滚动条
 

@@ -1,18 +1,3 @@
-//正则验证
-	$("name1").onblur=function(){
-		var name1=document.getElementById("name1").value;			
-			if(!(/^[a-zA-Z_]\d|\w{5,14}$/).test(name1)){ 
-				alert("请输入正确的用户名")
-			} 
-	}
-	$("password").onblur=function(){
-		var name1=document.getElementById("password").value;			
-			if(!(/[a-zA-Z_]\d|\w{6,14}$/).test(name1)){ 
-				alert("请输入正确的密码")
-			} 
-	}
-
-
 
  function $(id){
     return document.getElementById(id);
@@ -102,3 +87,19 @@ window.onscroll=function(){
 		$("hide5").style.display="none";
 		}
 		
+jQuery("#btnLogin").click(function(){
+	jQuery.ajax({
+		url:"loginCheck.php",
+		async:true,
+		data:"userName="+$('#userId').val()+"&userPass="+$("#passId").val(),
+		type:"post",
+		success:function(data){
+			if(data=="1"){
+				//保存cookie
+				location.href="index.html";
+			}else{
+				jQuery("#errmsg").html("亲，用户名或者密码错误，登录失败，请想好再输！");
+			}
+		}		
+	});	
+});
