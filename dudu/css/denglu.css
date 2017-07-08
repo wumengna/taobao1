@@ -56,7 +56,7 @@
 					border: 1px solid rgb(231, 76, 60);	
 				}
 #main .main-r input:nth-child(3){
-								margin-bottom:30px;
+								margin-bottom:10px;
 								}
 #main .main-r .f1 input{
 							display:block;
@@ -96,5 +96,19 @@
 					font-size: 12px;
 					line-height: 18px;
 				}
-
-
+#main .main-r #errmsg{
+	width: 260px;
+	height: 20px;
+	display: block;
+	margin-bottom: 5px;	
+	color: #E74C3C;
+	font-size: 12px;
+}
+#main .main-r #showmeg{
+	width: 260px;
+	height: 36px;
+	display: block;
+	margin-top: 5px;	
+	color: #E74C3C;
+	font-size: 12px;	
+}

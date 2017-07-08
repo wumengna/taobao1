@@ -29,8 +29,8 @@
 		if($count==1){
 			
 			echo "注册成功";
-			sleep(2);
-			header('Location: denglu.html');
+//			sleep(2);
+//			header('Location: ../html/denglu.html');
 		}else{
 			echo "注册失败";
 		}

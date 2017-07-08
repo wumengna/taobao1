@@ -47,7 +47,7 @@
 #main .main-r input{
 	width: 200px;
 	height: 34px;
-	margin-bottom: 30px;
+	margin-bottom: 12px;
 	
 	
 }
@@ -64,7 +64,8 @@
 						color:#e74c3c;
 						margin-top: -8px;
 						display: block;
-						line-height:38px;
+						text-align: center;
+						line-height:16px;
 					
 					}
 #main .main-r #phone2{	width: 20px;
@@ -85,10 +86,10 @@
 						margin-top:5px;
 					}	
 #main .main-r #name1{
-	width: 200px;
-    height: 34px;
-    margin-bottom: 30px;	
-	}							
+						width: 200px;
+					    height: 34px;
+					    margin-bottom: 30px;	
+						}							
 #main .main-r input:nth-child(6){
 					width: 260px;
 					height: 34px;
@@ -131,10 +132,12 @@
 						background: #e74c3c;
 						color: white;
 						border: none;
+						cursor: pointer;
+						margin-left: 20px;						
 						border-radius: 5px;
 						font-size: 14px;
 						text-align: center;
-						margin-top: 20px;
+						margin-top: 5px;
 						line-height: 36px;
 						font-weight: normal;
 						}
@@ -182,7 +185,9 @@
 #main .main-r #denglu{
 				font-size: 12px;
 				color: #BEBDBB;
-				margin-bottom: 20px;
+				margin-bottom: -15px;
+				margin-left: 20px;
+				margin-top: 10px;
 				text-align: center;
 				width: 268px;
 			}
@@ -197,6 +202,7 @@
 				height: 18px;
 				font-size: 13px;
 				width: 260px;
+				margin-left: 20px;
 				margin-top: 24px;
 				text-align: center;
 			}
@@ -211,5 +217,20 @@
 					margin-bottom: -2px;
 					display: inline-block;
 				}
-
+#main .main-r #warn1{
+						display: block;
+						width: 200px;
+						height: 22px;
+						font-size: 12px;
+						text-align: center;
+						color:#E74C3C;	
+					}
+#main .main-r #showmeg{
+						display: block;
+						width: 200px;
+						height: 22px;
+						text-align: center;
+						font-size: 12px;
+						color:#E74C3C;	
+					}
 

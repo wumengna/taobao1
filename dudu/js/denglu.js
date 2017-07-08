@@ -3,7 +3,6 @@
     return document.getElementById(id);
   };
 
-
 window.onscroll=function(){
 	//取得滚动条滚动距离（页面滚动距离）
 	var gun=document.documentElement.scrollTop+document.body.scrollTop;
@@ -85,21 +84,31 @@ window.onscroll=function(){
 		}
 	$("hide5").onmouseout=function(){
 		$("hide5").style.display="none";
+	}
+	
+//登录时的提交判断
+	$("btnLogin").onclick=function(){
+		if(($("name1").value.length>0) && ($("password").value.length>0)){			
+			jQuery("#btnLogin").click(function(){
+				jQuery.ajax({
+					url:"../php/denglu.php",
+					async:true,
+					data:"userName="+jQuery('#name1').val()+"&userPass="+jQuery("#password").val(),
+					type:"post",
+					success:function(data){
+						if(data=="1"){
+							//保存cookie
+							location.href="../index.html";
+						}else{
+							jQuery("#errmsg").html("亲，用户名或者密码错误，登录失败!");
+						}
+					}		
+				});	
+			});
+			$("showmeg").innerHTML="";
+		}else{
+			$("showmeg").innerHTML="请检查用户名和密码是否为空";		
 		}
 		
-jQuery("#btnLogin").click(function(){
-	jQuery.ajax({
-		url:"loginCheck.php",
-		async:true,
-		data:"userName="+$('#userId').val()+"&userPass="+$("#passId").val(),
-		type:"post",
-		success:function(data){
-			if(data=="1"){
-				//保存cookie
-				location.href="index.html";
-			}else{
-				jQuery("#errmsg").html("亲，用户名或者密码错误，登录失败，请想好再输！");
-			}
-		}		
-	});	
-});
+	}
+	

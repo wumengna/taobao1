@@ -11,10 +11,9 @@
 	}else{
 		//2)、执行SQL语句
 		mysql_select_db("zhuce",$con);
-		$str="select * from userTable where userName='".$userName."' and userPass='".$userPass."'";
+		$str="select * from zhuceuse1 where userName='".$userName."' and userPass='".$userPass."'";
 		$result = mysql_query($str,$con); 
 		$rowCount = mysql_num_rows($result);
-		
 		
 		//3)、关闭数据库
 		mysql_close($con);
