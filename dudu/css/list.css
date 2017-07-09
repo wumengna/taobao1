@@ -21,11 +21,11 @@
 /*===========main===========================*/
 #main{	
 	width:100%;
-	overflow:hidden;	
+	overflow:hidden;
+	height: auto;	
 	}
 #main .main-s{
-				width: 1150px;
-				height: 28px;
+				width: 1150px;				
 				margin: 0 auto;
 				overflow: hidden;
 				line-height: 28px;
@@ -46,21 +46,19 @@
 				}
 #main .main-s span b{ font-weight: 100;}									
 #main .mains{
-	width:1150px;
-		height:414px;
+		width:1150px;
+		overflow: hidden;
 		margin: 0 auto;
-		margin-bottom: 10px;
-	
-	
-	
+		height: auto;
+		
 	}
 #main .mains dl{
 					float:left;
 		}	
 #main .mains dl dt{
-	width:222px;
-	height:222px;
-	}
+						width:222px;
+						height:222px;
+						}
 #main .mains dl dt img{
 							width:222px;
 							height:222px;

@@ -340,7 +340,7 @@ function GetRTime(){
 			}
 	}
 
-
+//自动获取详情页
 
 
 

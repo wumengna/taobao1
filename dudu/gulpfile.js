@@ -13,6 +13,10 @@ gulp.task("copy-imgs",function(){
 	gulp.src("imgs/*")
 	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu/imgs"));
 });
+gulp.task("copy-listimg",function(){
+	gulp.src("listimg/*")
+	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu/listimg"));
+});
 gulp.task("copy-html",function(){
 	gulp.src("html/**/*")
 	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu/html"));
@@ -31,14 +35,22 @@ gulp.task("copy-php",function(){
 });
 gulp.task("copy-index",function(){
 	gulp.src("index.html")
-	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu/xiangmu"));
+	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu"));
+});
+gulp.task("copy-addGoods",function(){
+	gulp.src("addGoods.html")
+	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu"));
 });
 gulp.task("watch",function(){
 	gulp.watch("css/**/*",["copy-css"]);
 	gulp.watch("js/**/*",["copy-js"]);
 	gulp.watch("images/**/*",["copy-images"]);
+	gulp.watch("img/**/*",["copy-img"]);
+	gulp.watch("listimg/**/*",["copy-listimg"]);
 	gulp.watch("php/**/*",["copy-php"]);
+	gulp.watch("imgs/**/*",["copy-imgs"]);
 	gulp.watch("html/**/*",["copy-html"]);
 	gulp.watch("index",["copy-index"]);	
+	gulp.watch("addGoods",["copy-addGoods"]);	
 });
 

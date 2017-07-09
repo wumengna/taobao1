@@ -185,9 +185,42 @@ function GetRTime(){
   }
   time1=setInterval(GetRTime,0);
   
+  
 
 
+//自动添加商品
+	jQuery.ajax({
+	type:"get",
+	url:"../php/getGoodsList.php",
+	async:true,
+	success:function(data){
+		var obj=eval(data);
+		for(let i=0;i<14;i++){
+			let goodsId=obj[i].goodsId;
+			let goodsPrice=obj[i].goodsPrice;
+			let goodsImg=obj[i].goodsImg;
+			let goodsDesc=obj[i].goodsDesc;
+			let goodsName=obj[i].goodsName;			
+			let beiyong1=obj[i].beiyong1;
+			let str="<dl ord='+goodsId+'><dt><a href='#'><img src='"+goodsImg+"'/></a></dt><dd><h2>"+goodsName+"</h2><h4>"+goodsDesc+"</h4><p><a href='#'>￥ "+goodsPrice+"</a><button>"+beiyong1+"</button></p></dd></dl>";
+			jQuery(".mains").append(str); 
+		}
+		//列表页跳转到详情页
+		var dls=document.getElementsByTagName("dl");
+			for(var j=ord;j<dls.length;j++){
+				(function(j){
+					dls[j].onclick=function(){
+						saveCookie()
+				})(j)
+				
+					
+				
+			}
+			
+		}
 
+	}  
+});
 
 	
 	
