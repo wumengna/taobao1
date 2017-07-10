@@ -314,10 +314,9 @@
 
 #footer{
 			width: 100%;
-			
+			height: 140px;
 			margin-top: 140px;
-			background: #F8F8F8;
-			clear: both;
+			background: #F8F8F8;			
 			}
 #footer .foot{
 	width:1150px;

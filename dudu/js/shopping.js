@@ -96,3 +96,48 @@ $("shop2").onclick=function(){
 	$("jiesuan").style.backgroundColor="#bebdbb";
 	
 }
+//轮播图
+
+       var Li =document.getElementsByClassName("sections")[0].offsetWidth;//获取单个图片li的宽    
+       var obannerimg = document.getElementsByClassName("sections");//获取
+		var cbannerimg = obannerimg[0].cloneNode(true)//克隆
+		$("sectionss").appendChild(cbannerimg);
+		$("sectionss").style.width = Li*obannerimg.length+"px";
+		
+     /* 右按钮*/
+      var num = 0;
+       $("right").onclick = function(){
+       	   num++;
+       	   if(num>obannerimg.length-1){
+       	   	num=1; 
+       	   	$("sectionss").style.left = 0+"px";
+       	   }  
+       	   
+       	 	move($("sectionss"),"left",-Li*num);       	 
+       }   
+       
+       
+         /* 左按钮*/
+       $("left").onclick = function(){
+       	   num--;
+       	  
+       	   if(num<0){
+       	   	num=obannerimg.length-2;
+       	   	$("sectionss").style.left = -Li*(obannerimg.length-1)+"px";
+       	   }
+       	    console.log(num)
+       	   move($("sectionss"),"left",-Li*num);
+       }
+       
+    
+    /* 左右按钮的显示与隐藏*/
+       $("section").onmouseover= function(){
+       	  $("left").style.display = "block";
+       	  $("right").style.display = "block";
+     
+       	};
+       $("section").onmouseout = function(){
+       	 $("left").style.display = "none";
+       	 $("right").style.display = "none";
+       };
+

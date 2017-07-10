@@ -72,9 +72,8 @@
 
 $("submit").onclick=function(){
 	
-	if($("phone").value.length<=0 && $("name1").value.length<=0 && $("password1").value.length<=0 && ($("password2").value!=$("password1").value) && (($("text").value)!=($("btn1").value))){
+	if($("phone").value.length<=0 && $("name1").value.length<=0 && $("password1").value.length<=0 && ($("password2").value!=$("password1").value) && (($("text").value)!=($("btn1").value))){		
 		$("showmeg").innerHTML="请确认信息是否完善";
-		alert(1)
 	}else{
 		if(!((/^1[34578]\d{9}$/).test($("phone").value))){
 			$("phone1").innerHTML="请输入正确的手机号";
@@ -97,8 +96,8 @@ $("submit").onclick=function(){
 				jQuery.ajax({
 				url:"../php/zhuce.php",
 				async:true,
-				data:"userName="+jQuery('#name1').val()+"&userPass="+jQuery("#password").val()+"$userPhone ="+ jQuery("phone").val(),
-				type:"post",
+				data:"userName="+jQuery('#name1').val()+"&userPass="+jQuery("#password").val()+"&userPhone ="+ jQuery("#phone").val(),
+				type:"post",                                                                       
 				success:function(data){
 					console.log(data)
 					if(data=="1"){
@@ -107,7 +106,7 @@ $("submit").onclick=function(){
 						saveCookie("userPass",jQuery("#password").val(),7);
 						$("warn1").innerHTML = "";
 						$("showmeg").innerHTML="";
-						location.href="index.html";											
+						location.href="denglu.html";											
 					}else{
 						$("warn1").innerHTML = "亲，请检查所写信息是否正确！";
 						$("showmeg").innerHTML="";

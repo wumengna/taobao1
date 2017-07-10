@@ -286,3 +286,12 @@ jQuery("#sousuo").focusout(function(){
 	jQuery("#s1").css({"margin-top":"-25px"});
 	jQuery("#yinc").hide();
 });
+//保存欢迎登陆
+jQuery(function(){
+	var strN =  getCookie("userName");   //
+	if(strN==""){
+		jQuery("#denglu").text("亲，请登陆");
+	}else{
+		jQuery("#denglu").text(strN+"，欢迎您！");
+	}
+});

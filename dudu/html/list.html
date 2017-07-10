@@ -207,5 +207,42 @@
 </div>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
 <script type="text/javascript" src="../js/list.js"></script>
+<script type="text/javascript" src="../js/cookieTools.js" ></script>
 </body>
 </html>	
+<script>
+//自动添加商品
+	jQuery.ajax({
+	type:"get",
+	url:"../php/getGoodsList.php",
+	async:true,
+	success:function(data){
+		var obj=eval(data);
+		for(let i=0;i<14;i++){
+			let goodsId=obj[i].goodsId;
+			let goodsPrice=obj[i].goodsPrice;
+			let goodsImg=obj[i].goodsImg;
+			let goodsDesc=obj[i].goodsDesc;
+			let goodsName=obj[i].goodsName;			
+			let beiyong1=obj[i].beiyong1;
+			let str="<dl  ord='"+goodsId+"'><dt><a href='#'><img src='"+goodsImg+"'/></a></dt><dd><h2>"+goodsName+"</h2><h4>"+goodsDesc+"</h4><p><a href='#'>￥ "+goodsPrice+".00</a><button>"+beiyong1+"</button></p></dd></dl>";
+			jQuery(".mains").append(str); 
+		}
+		//跳转详情页
+		var dls=document.getElementsByTagName("dl");	
+		
+		var number;
+		for(var j=0;j<dls.length;j++){
+				(function(j){					
+					dls[j].onclick=function(){
+						number=dls[j].getAttribute("ord");
+						//alert(number)
+						saveCookie("number",number,7);
+						location.href="../html/detail.html";
+				}
+			})(j)			
+		}
+		//结束
+	}  
+});
+</script>
