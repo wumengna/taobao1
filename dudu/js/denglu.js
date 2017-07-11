@@ -95,15 +95,17 @@ window.onscroll=function(){
 					async:true,
 					data:"userName="+jQuery('#name1').val()+"&userPass="+jQuery("#password").val(),
 					type:"post",
+					
 					success:function(data){
 						if(data=="1"){
-							//保存cookie
-							location.href="../index.html";
+							//保存cookie					
+							saveCookie("userName",jQuery('#name1').val(),7);							
+							location.href="index.html";
 						}else{
 							jQuery("#errmsg").html("亲，用户名或者密码错误，登录失败!");
 						}
 					}		
-				});	
+				});	    
 			});
 			$("showmeg").innerHTML="";
 		}else{

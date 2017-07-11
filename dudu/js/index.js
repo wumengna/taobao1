@@ -286,12 +286,45 @@ jQuery("#sousuo").focusout(function(){
 	jQuery("#s1").css({"margin-top":"-25px"});
 	jQuery("#yinc").hide();
 });
+
+//登录保存cookie
+function getCookie(key){	
+	var str = decodeURIComponent(document.cookie);
+	//1、转换成数组
+	var arr = str.split("; ");
+	//2、根据键找到对应的数组元素
+	var index=-1;
+	for(var i=0;i<arr.length;i++){
+		if(arr[i].indexOf(key+"=")==0){
+			index = i;
+			break;
+		}
+	}
+	//3、截取出值
+	if(index==-1){
+		return "";
+	}else{
+		return arr[index].substring(key.length+1);
+	}
+}
 //保存欢迎登陆
 jQuery(function(){
-	var strN =  getCookie("userName");   //
+	var strN =  getCookie("userName"); 
+	console.log(strN)
 	if(strN==""){
-		jQuery("#denglu").text("亲，请登陆");
+		jQuery("#du").text("亲，请先注册登录");
+		
 	}else{
-		jQuery("#denglu").text(strN+"，欢迎您！");
+		jQuery("#du").text("亲爱的："+strN+"，嘟嘟欢迎您!");
+		jQuery("#tuichu").show();
 	}
 });
+$("tuichu").onclick=function(){
+	removeCookie("userName")
+	location.href="index.html";
+	$("tuichu").style.display="none";	
+}
+$("du").onclick=function(){
+	location.href="denglu.html";
+	
+}

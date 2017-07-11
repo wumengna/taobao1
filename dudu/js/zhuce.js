@@ -1,43 +1,43 @@
 
 //功能：正则验证
 
-	$("phone").onblur=function(){
-		var phone=document.getElementById("phone").value;			
-			if(!(/^1[34578]\d{9}$/).test(phone)){ 
-				$("phone1").innerHTML="请输入正确的手机号";
-				$("phone2").innerHTML="";
-	
-			}else{  
-				$("phone2").style.display="block";
-				$("phone1").innerHTML="";
-			}  
-	}
-	
-	$("name1").onblur=function(){
-		var name1=document.getElementById("name1").value;			
-			if(!(/^[a-zA-Z_]\d|\w{5,14}$/).test(name1)){ 
-				alert("请输入正确的用户名")
-			}
-		
-	}
-		$("password1").onblur=function(){
-		var name2=document.getElementById("password1").value;			
-			if(!(/[a-zA-Z_]\d|\w{6,14}$/).test(name2)){ 
-				$("span").innerHTML="请输入正确的密码";			
-			} else{
-				$("span").innerHTML="";	
-			}
-			
-	}
-		$("password2").onblur=function(){
-		var name3=document.getElementById("password2").value;
-		var name2=document.getElementById("password1").value;			
-			if(name3!=name2){
-				$("span2").innerHTML="请再次确认密码是否一致";	
-			}else{
-				$("span2").innerHTML="";
-			}			
-	}
+//	$("phone").onblur=function(){
+//		var phone=document.getElementById("phone").value;			
+//			if(!(/^1[34578]\d{9}$/).test(phone)){ 
+//				$("phone1").innerHTML="请输入正确的手机号";
+//				$("phone2").innerHTML="";
+//	
+//			}else{  
+//				$("phone2").style.display="block";
+//				$("phone1").innerHTML="";
+//			}  
+//	}
+//	
+//	$("name1").onblur=function(){
+//		var name1=document.getElementById("name1").value;			
+//			if(!(/^[a-zA-Z_]\d|\w{5,14}$/).test(name1)){ 
+//				alert("请输入正确的用户名")
+//			}
+//		
+//	}
+//		$("password1").onblur=function(){
+//		var name2=document.getElementById("password1").value;			
+//			if(!(/[a-zA-Z_]\d|\w{6,14}$/).test(name2)){ 
+//				$("span").innerHTML="请输入正确的密码";			
+//			} else{
+//				$("span").innerHTML="";	
+//			}
+//			
+//	}
+//		$("password2").onblur=function(){
+//		var name3=document.getElementById("password2").value;
+//		var name2=document.getElementById("password1").value;			
+//			if(name3!=name2){
+//				$("span2").innerHTML="请再次确认密码是否一致";	
+//			}else{
+//				$("span2").innerHTML="";
+//			}			
+//	}
 
 
 	//验证码
@@ -70,53 +70,54 @@
 		}
 //提交时的验证	
 
-$("submit").onclick=function(){
-	
-	if($("phone").value.length<=0 && $("name1").value.length<=0 && $("password1").value.length<=0 && ($("password2").value!=$("password1").value) && (($("text").value)!=($("btn1").value))){		
-		$("showmeg").innerHTML="请确认信息是否完善";
-	}else{
-		if(!((/^1[34578]\d{9}$/).test($("phone").value))){
+$("submit").onclick=function(){	
+	jQuery.ajax({
+		url:"../php/zhuce.php",
+		async:true,
+		data:"userName="+jQuery('#name1').val()+"&userPass="+jQuery("#password1").val(),
+		type:"post",                                                                       
+		success:function(data){					
+		if(!((/^1[34578]\d{9}$/).test($("phone").value) && $("phone").value.length>0 )){
 			$("phone1").innerHTML="请输入正确的手机号";
 			$("phone2").innerHTML="";
-		}else if(!((/^[a-zA-Z_]\d|\w{5,14}$/).test($("name1").value))){
+		}else {
 			$("phone2").style.display="block";
-			$("phone1").innerHTML="";
+			$("phone1").innerHTML="";			
+		}		
+		if(!((/^[a-zA-Z_]\d|\w{5,14}$/).test($("name1").value) && $("name1").value.length>0)){
 			alert("请输入正确的用户名")	
-		}else if(!((/[a-zA-Z_]\d|\w{6,14}$/).test($("password1").value))){
+		}		
+		if(!((/[a-zA-Z_]\d|\w{6,14}$/).test($("password1").value) && $("password1").value.length>0)){
 			$("span").innerHTML="请输入正确的密码";							
-		}else if(($("password2").value)!=($("password1").value)){
-			$("span").innerHTML="√";	
+		}else{
+			$("span").innerHTML="√";								
+		}		
+		if(($("password2").value)!=($("password1").value)){
 			$("span2").innerHTML="请再次确认密码是否一致";	
-			
-		}else if($("text").value!=$("btn1").value){
-			$("span2").innerHTML="√";
+		}else {
+			$("span2").innerHTML="√";			
+		}		
+		if($("text").value!=$("btn1").value){			
 			$("photo").innerHTML="请输入正确的图形验证码";						
 		}else{
 			$("photo").innerHTML="√";
-				jQuery.ajax({
-				url:"../php/zhuce.php",
-				async:true,
-				data:"userName="+jQuery('#name1').val()+"&userPass="+jQuery("#password").val()+"&userPhone ="+ jQuery("#phone").val(),
-				type:"post",                                                                       
-				success:function(data){
-					console.log(data)
-					if(data=="1"){
-						//保存cookie
-						saveCookie("userName",jQuery("#name1").val(),7);
-						saveCookie("userPass",jQuery("#password").val(),7);
-						$("warn1").innerHTML = "";
-						$("showmeg").innerHTML="";
-						location.href="denglu.html";											
-					}else{
-						$("warn1").innerHTML = "亲，请检查所写信息是否正确！";
-						$("showmeg").innerHTML="";
-					}
-				}		
-			})
-
-		}
-			
-	}
+		}				
+			console.log(data)
+			if(data=="1"){
+				//保存cookie
+				saveCookie("userName",jQuery("#name1").val(),7);
+				saveCookie("userPass",jQuery("#password1").val(),7);
+				
+				
+				$("warn1").innerHTML = "";
+				$("showmeg").innerHTML="";
+				location.href="denglu.html";											
+			}else{
+				$("warn1").innerHTML = "亲，请检查所写信息是否正确！";
+				$("showmeg").innerHTML="";
+			}
+		}		
+	})			
 }						
 //滚动条
 //localhost.href="denglu.html";

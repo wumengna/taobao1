@@ -205,7 +205,7 @@
             </ul>
             <ul class="ul2">
             	<li><a href="#"><img src="../img/like.png"/></a><a href="#">收藏</a></li>
-                <li><a href="zhuce.html">立即购买</a></li>
+                <li id="goumai"><a href="#">立即购买</a></li>
             </ul>            
         </div>
     </div>
@@ -458,8 +458,6 @@
 		async:true,
 		data:"goodsId="+goodsId,
 		success:function(data){
-			
-			console.log(data)
 			let obj=eval('('+data+')');					
 				let goodsPrice=obj.goodsPrice;
 				let goodsDesc=obj.goodsDesc;
@@ -573,6 +571,25 @@
 		}  
 });
 
+var vipName=getCookie("userName");
+goodsId=getCookie("number");
+var goodsCount=$("b").innerHTML;
+
+	jQuery("#goumai").click(function(){
+		jQuery.ajax({
+		type:"get",
+		url:"../php/addShoppingCart.php",
+		async:true,
+		data:{"vipName":vipName,"goodsId":goodsId,"goodsCount":goodsCount},
+		success:function(data){
+				location.href="shopping.html";
+			}
+		});
+	})
 	
+	
+	
+			
+
 	
 </script>

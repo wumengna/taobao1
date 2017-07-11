@@ -6,7 +6,6 @@
 	//1、接收客户端的输入的数据
 	$userName = $_POST['userName'];//$_POST:针对post请求方法。
 	$userPass = $_POST['userPass'];
-	$userPhone = $_POST['userPhone'];
 
 	//2、保存到数据库
 	//1)、连接数据库
@@ -18,7 +17,7 @@
 		//2)、执行SQL语句
 		mysql_select_db("zhuce",$con);
 		
-	$str="insert into zhuceuse1(userName,userPass,userPhone) values('".$userName."','".$userPass."','".$userPhone."')";
+	$str="insert into zhuceuse1(userName,userPass,) values('".$userName."','".$userPass."',)";
 		
 	
 		$count = mysql_query($str,$con); 

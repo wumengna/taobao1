@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>购物车</title>
 <link rel="stylesheet" type="text/css" href="../css/shopping.css"/>
 <link rel="stylesheet" type="text/css" href="../css/more.css"/>
 <link rel="stylesheet" type="text/css" href="../css/public.css"/>
@@ -158,19 +158,20 @@
  	</div>
       <ul class="sh1">
           <li>
+          	<!--<input type="checkbox"/>-->
             <em id="shop1"><img src="../img/shop1.png"/></em>
             <em id="shop2"><img src="../img/shop2.png"/></em>
           </li>
           <li>
             <dl>
                 <dt>       
-                     <img src="../imgs/gw1.jpg"/>
+                     <img src="" class="imgs"/>
                 </dt>
                 <dd>
-                    <h4><a href="#">手工制作台南关庙大板面/板拉面</a></h4>
+                    <h4 class="h44"><a href="#"></a></h4>
                     <p>
-                        <span>颜色：板拉宽面</span>
-                        <span>尺码：360g</span>
+                        <span class="span1">颜色：板拉宽面</span>
+                        <span class="span2">尺码：360g</span>
                     </p>
                     <h3>
                         <img src="../imgs/gw2.png"/>品牌商发货
@@ -178,14 +179,14 @@
                 </dd>
             </dl>
           </li> 
-          <li>￥52.00</li> 
+          <li class="jiage"></li> 
           <li>
-              <span class="add">-</span>
-              <input id="li4" type="text" value="1"/>
-              <span class="minus">+</span>
+              <span class="add" id="add">-</span>
+              <b id="li4"></b>             
+              <span class="minus" id="minus">+</span>
           </li>
            <li>
-            <span>¥：<i>52.00</i></span>
+            <span><i class="evlPrice"></i></span>
            </li>
             <li>
               <a href="#"><img src="../img/delp.png"/></a>
@@ -199,7 +200,7 @@
             <label for="all">全选</label>
        </p>
        <ul>
-       		<li>总计：<span>￥0.00</span></li>
+       		<li>总计：<span id="zongjiage"></span></li>
        		<li ><a href="#" id="jiesuan">去结算</a></li>       	
        </ul>           	
     </div>    
@@ -281,13 +282,13 @@
 			<div id="section-x" class="sections">
 				<dl>
 		            <dt>
-		                <a href="#"><img src="../img/m1.jpg"/></a>
+		                <a href="#"><img src="../imgs/d1.jpg"/></a>
 		            </dt>
 		            <dd>
-		                <h2>Vanilla Butterfly[中国]</h2> 
-		                <h4>芷蝶 纯色水洗棉四件套</h4>
+		                <h2>bioderma[法国]</h2> 
+		                <h4>贝德玛 净颜控油洁肤液500ml</h4>
 		                <p>
-		                    <a href="#">￥369.00</a>
+		                    <a href="#">￥138.00</a>
 		                    <button>立即购买</button>
 		                </p>
 		            </dd>
@@ -380,6 +381,7 @@
 
 </body>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="../js/cookieTools.js" ></script>
 <script type="text/javascript" src="../js/shopping.js"></script>
 <script type="text/javascript" src="../js/move.js" ></script>
 

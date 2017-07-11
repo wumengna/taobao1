@@ -33,10 +33,6 @@ gulp.task("copy-php",function(){
 	gulp.src("php/**/*")
 	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu/php"));
 });
-gulp.task("copy-index",function(){
-	gulp.src("index.html")
-	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu"));
-});
 gulp.task("copy-addGoods",function(){
 	gulp.src("addGoods.html")
 	.pipe(gulp.dest("D:/phpStudy/WWW/test0705/dudu"));
@@ -49,8 +45,7 @@ gulp.task("watch",function(){
 	gulp.watch("listimg/**/*",["copy-listimg"]);
 	gulp.watch("php/**/*",["copy-php"]);
 	gulp.watch("imgs/**/*",["copy-imgs"]);
-	gulp.watch("html/**/*",["copy-html"]);
-	gulp.watch("index",["copy-index"]);	
+	gulp.watch("html/**/*",["copy-html"]);	
 	gulp.watch("addGoods",["copy-addGoods"]);	
 });
 

@@ -141,3 +141,50 @@ $("shop2").onclick=function(){
        	 $("right").style.display = "none";
        };
 
+//添加购物车
+var vipName=getCookie("userName");
+
+jQuery.ajax({	
+		type:"get",
+		data:{'vipName':vipName},
+		url:"../php/getShoppingCart.php",
+		async:true,
+		success:function(data){
+			let obj=eval(data);
+			//将返回的内容解析，将内容插入页面
+			
+			jQuery(".imgs").attr({src:obj[0].goodsImg});
+			jQuery(".h44").html(obj[0].goodsDesc);//说明		$("#li4").val(obj[0].goodsCount);//数量
+			jQuery(".jiage").html("￥"+obj[0].goodsPrice);//价格
+			jQuery(".evlPrice").html("￥"+obj[0].goodsPrice*obj[0].goodsCount)//总价格
+			jQuery("#li4").html(obj[0].goodsCount);
+			jQuery("#zongjiage").html("￥"+obj[0].goodsPrice*obj[0].goodsCount);//所有商品的总价格				
+		}
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+//数量增加减少
+$("minus").onclick=function(){
+	var x=1;
+	$("li4").innerHTML=parseInt($("li4").innerHTML)+x;
+	x++;
+}
+	$("add").onclick=function(){
+		var x=1;
+		$("li4").innerHTML=parseInt($("li4").innerHTML)-x;
+		x--;
+		if($("li4").innerHTML<=1){
+			$("li4").innerHTML=1;
+		}
+	}	
+
