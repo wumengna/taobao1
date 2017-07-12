@@ -165,8 +165,8 @@
             </div>
         </div>
     	<div class="main-r">
-        	<h2 class="hh1">[哄着你安稳入睡] 蜗牛睡眠智能睡眠枕</h2>
-        	<h5><a href="#">商品品牌：<span class="hh2">蜗牛睡眠[中国]</span></a></h5>
+        	<h2 class="hh1"></h2>
+        	<h5><a href="#">商品品牌：<span class="hh2"></span></a></h5>
        		<p class="p1">
             	<span></span>
                 <i>距离开始</i>
@@ -570,7 +570,7 @@
 
 		}  
 });
-
+//加入购物车
 var vipName=getCookie("userName");
 goodsId=getCookie("number");
 var goodsCount=$("b").innerHTML;
@@ -582,14 +582,10 @@ var goodsCount=$("b").innerHTML;
 		async:true,
 		data:{"vipName":vipName,"goodsId":goodsId,"goodsCount":goodsCount},
 		success:function(data){
+			//console.log(data)
 				location.href="shopping.html";
 			}
 		});
 	})
-	
-	
-	
-			
-
-	
+		
 </script>

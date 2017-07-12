@@ -1135,9 +1135,10 @@ span{
 							width:222px;
 							height:222px;
 						}
-#main-n .main-nx dl dt:hover{ 
-							transform: rotate(-360deg);
+#main-n .main-nx dl:hover{ 
+							transform: rotateY(-360deg);
 							opacity:.7;
+							border: 5px solid #E74C3C;
 							transition:all .7s linear 0s;
 							}	
 #main-n .main-nx dl dd{
@@ -1301,8 +1302,7 @@ span{
 					height: 45px;
 					margin-left: 10px;
 					margin-top: 12px;
-					}
-					
+					}					
 #chat{
 	width:340px;
 	height:450px;
@@ -1312,8 +1312,7 @@ span{
 	left: -340px;
 	display:none;
 	background:#ccc;
-	z-index: 9999;
-	
+	z-index: 9999;	
 	}
 #aside #chat h3{
 	position:absolute;
@@ -1322,8 +1321,7 @@ span{
 	height: 38px;
 	background:#f4f4f4;
 	text-align:center;
-	color:#4a4a4a;
-	
+	color:#4a4a4a;	
 	}
 #aside #chat input{position: absolute;
 					top: 415px;
@@ -1345,8 +1343,7 @@ span{
 					height: 27px;
 					line-height: 27px;
 					background: #fff;
-					color: #bebebe;
-				
+					color: #bebebe;				
 				}
 #aside #chat #span1{
 					position: absolute;
@@ -1357,7 +1354,6 @@ span{
 					right: -1px;
 					line-height: 38px;
 					color: #000;
-
 				}					
 #aside #chat .chat1{
 	width:100%;
@@ -1365,16 +1361,12 @@ span{
 	resize:none;
 	padding:0;
 	margin:0;	
-	}					
-					
+	}										
 #aside #chat .chat2{
 	width:100%;
 	height:150px;
-	resize:none;	
-
-	
-	}					
-						
+	resize:none;		
+	}											
 #aside #aside-x{
 					width: 65px;
 					height: 66px;

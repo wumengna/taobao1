@@ -83,19 +83,30 @@ window.onscroll=function(){
 		$("hide5").style.display="none";
 		}
 
-
-$("shop1").onclick=function(){
-	$("shop2").style.display="block";
-	$("shop1").style.display="none";
-	$("jiesuan").style.backgroundColor="#E74C3C";
-	
-}
-$("shop2").onclick=function(){
-	$("shop2").style.display="none";
-	$("shop1").style.display="block";
-	$("jiesuan").style.backgroundColor="#bebdbb";
-	
-}
+////复选框的点击事件
+//var shop1=document.getElementsByClassName("shop1")
+//var shop2=document.getElementsByClassName("shop2")
+//for(var x in shop1){
+//	shop1[x].onclick=function(){
+//		$("shop2").style.display="block";
+//		$("shop1").style.display="none";
+//		$("jiesuan").style.backgroundColor="#E74C3C";	
+//	}	
+//}
+//for(var y in shop1){
+//	shop2[y].onclick=function(){
+//		$("shop2").style.display="block";
+//		$("shop1").style.display="none";
+//		$("jiesuan").style.backgroundColor="#E74C3C";	
+//	}	
+//}
+//
+//$("shop2").onclick=function(){
+//	$("shop2").style.display="none";
+//	$("shop1").style.display="block";
+//	$("jiesuan").style.backgroundColor="#bebdbb";
+//	
+//}
 //轮播图
 
        var Li =document.getElementsByClassName("sections")[0].offsetWidth;//获取单个图片li的宽    
@@ -145,46 +156,76 @@ $("shop2").onclick=function(){
 var vipName=getCookie("userName");
 
 jQuery.ajax({	
-		type:"get",
-		data:{'vipName':vipName},
-		url:"../php/getShoppingCart.php",
-		async:true,
-		success:function(data){
-			let obj=eval(data);
-			//将返回的内容解析，将内容插入页面
+	type:"get",
+	data:{'vipName':vipName},
+	url:"../php/getShoppingCart.php",
+	async:true,
+	success:function(data){
+		let obj=eval(data);
+		//alert(data)
+		for(var i in obj){			
+			let goodsPrice=obj[i].goodsPrice;
+			let goodsImg=obj[i].goodsImg;
+			let goodsDesc=obj[i].goodsDesc;
+			let beiyong8=obj[i].beiyong8;
+			let beiyong9=obj[i].beiyong9;
+			let beiyong10=obj[i].beiyong10;
+			let goodsName=obj[i].goodsName;			
+			let beiyong1=obj[i].beiyong1;
+			let beiyong2=obj[i].beiyong2;
+			let evlPrice="￥"+obj[i].goodsPrice*obj[i].goodsCount;
+			let goodsCount=obj[i].goodsCount;
+			let goodsZongjia="￥"+obj[i].goodsPrice*obj[i].goodsCount;
+			//console.log(beiyong2)
+			let str="<ul class='sh1' ord='"+obj[i].goodsId+"'><li><em id='shop1' class='shop1'><img src='"+beiyong8+"'/></em><em id='shop2' class='shop2'><img src='"+beiyong9+"'/></em></li><li><dl><dt><img src='"+goodsImg+"' class='imgs'/></dt><dd><h4 class='h44'><a href='#'>"+goodsDesc+"</a></h4><p><span>颜色：<img src='"+beiyong2+"' class='span1'></span><span class='span2'>尺码：均码</span></p><h3><img src='../imgs/gw2.png'/>品牌商发货 </h3></dd></dl></li><li class='jiage'>￥ "+goodsPrice+".00</li><li class='jiajian'><span class='add' id='add'>-</span><b id='li4' class='li4'>"+goodsCount+"</b><span class='minus' id='minu'>+</span></li><li><span><i class='evlPrice'> "+evlPrice+".00</i></span></li><li id='shanchu' class='shanchu'><a href='#'><img src='"+beiyong10+"'/></a></li></ul>";				
+			jQuery(".jiesuan").append(str);			
+		}
+		//数量加减
+			var jians=document.getElementsByClassName("add");
+			var jias=document.getElementsByClassName("minus")
+			//减
+			for(var j in jians){
+				jians[j].onclick=function(){				
+				let count=jQuery(this).next();
+				//alert(count)
+				let num=count.html();
+				//alert(num)
+				num-=1;				
+				if(num<=1){
+					num=1;
+				}
+					count.html(num);
+				}				
+			}
+			//加
+			for(var j in jias){
+				jias[j].onclick=function(){
+				let count=jQuery(this).prev();
+				let num=parseInt(count.html());
+					num+=1;
+					count.html(num)
+				}				
+			}
+			//数量加减结束
 			
-			jQuery(".imgs").attr({src:obj[0].goodsImg});
-			jQuery(".h44").html(obj[0].goodsDesc);//说明		$("#li4").val(obj[0].goodsCount);//数量
-			jQuery(".jiage").html("￥"+obj[0].goodsPrice);//价格
-			jQuery(".evlPrice").html("￥"+obj[0].goodsPrice*obj[0].goodsCount)//总价格
-			jQuery("#li4").html(obj[0].goodsCount);
-			jQuery("#zongjiage").html("￥"+obj[0].goodsPrice*obj[0].goodsCount);//所有商品的总价格				
-		}
-	});
-
-
-
-
-
-
-
-
-
-
-
-
-//数量增加减少
-$("minus").onclick=function(){
-	var x=1;
-	$("li4").innerHTML=parseInt($("li4").innerHTML)+x;
-	x++;
-}
-	$("add").onclick=function(){
-		var x=1;
-		$("li4").innerHTML=parseInt($("li4").innerHTML)-x;
-		x--;
-		if($("li4").innerHTML<=1){
-			$("li4").innerHTML=1;
-		}
-	}	
+			//删除购物车商品
+		jQuery(".sh1").delegate(".shanchu", "click", function(){ 
+			console.log(this)
+			var that = this;
+			var ids=jQuery(this).parent().attr("ord");
+			jQuery.get("../php/deleteGoods.php", { "vipName": vipName, "goodsId": ids },function(data){
+					console.log(data);
+				if(data=="1"){
+					location.reload();
+		    		jQuery(that).parents(".sh1").remove();
+		    		console.log("删除成功")
+				}else{
+					console.log("删除失败")
+				}		    		
+			});		
+		});
+	//删除结束		
+	}
+});	
+						
 

@@ -129,7 +129,8 @@
 .shopCar .sh1{
 				padding-left: 24px;
 				padding-top: 24px;
-				height: 107px;
+				overflow: hidden;
+				padding-bottom: 10px;
 				position: relative;
 				border-bottom: 1px solid #ECECEC;
 				}
@@ -175,11 +176,25 @@
 .shopCar .sh1 li dl dd p{
 						color: #828282;
 						font-size: 12px;
-						height: 17px;
+						height: 25px;
+						margin-top: 15px;
 						overflow: hidden;
 						}
-.shopCar .sh1 li dl dd p span{ margin-right: 10px;}
-
+.shopCar .sh1 li dl dd p span{ margin-right: 10px; float: left;}
+.shopCar .sh1 li dl dd p span img{
+									width: 21px;
+								    height: 21px;
+								    display: block;
+								    margin-top: -16px;								    
+								    border-radius: 3px;
+								    padding: 1px;
+								    border: 1px solid #e74c3c;
+								 	margin-left: 40px;
+								   }
+.shopCar .sh1 .jiajian{ width: 200px;
+						height: 30px;
+						
+						}
 .shopCar .sh1 li dl dd h3{
 						font-size: 12px;
 						color: #828282;
@@ -238,11 +253,11 @@
 							width: 139px;
 							border-right: 1px dashed #BEBDBB;
 							}	
-.shopCar .sh1 li:nth-child(6){
+.shopCar .sh1 #shanchu{
 							padding-left: 39px;
 							padding-top: 32px;
 							}
-.shopCar .sh1 li:nth-child(6) img{
+.shopCar .sh1 #shanchu img{
 							display: block;
 							width: 18px;
 							height: 19px;
@@ -320,7 +335,8 @@
 #section{ 
 			width: 100%;			
 			height: 414px;
-			margin-top: 180px;
+			clear: both;
+			padding-top: 120px;
 			position: relative;
 			
 			}
