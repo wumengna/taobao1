@@ -188,9 +188,9 @@ function GetRTime(){
     document.getElementById("m").innerHTML = m;
     document.getElementById("s").innerHTML = s ;
   }
-
+	time1=setInterval(GetRTime,0);
  //轮播图 
- time1=setInterval(GetRTime,0);
+ 
 function $(id){
        	return document.getElementById(id);
        };

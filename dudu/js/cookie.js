@@ -1,16 +1,20 @@
+define([],function(){
+	function isCookie(){
+		return navigator.cookieEnabled?true:false;
+	}	
 //功能：保存cookie
 //参数：
 //key：键
 //value：值
 //dayCount：有效期（单位是天）
-//返回值：无
+//返回值：无	
 function saveCookie(key,value,dayCount){
 	var d = new Date();
 	d.setDate(d.getDate()+dayCount);
 	document.cookie = key+"="+encodeURIComponent(value)+";expires="+d.toGMTString()
 }
 
-
+	
 //功能：读取cookie（根据键读取对应的值）
 //参数：
 //key：键
@@ -36,12 +40,19 @@ function getCookie(key){
 		return arr[index].substring(key.length+1);
 	}
 }
-
+	
 //功能：删除cookie(根据键删除cookie)
 //参数：
 //key：键；
 function removeCookie(key){
 	saveCookie(key,"",-1);
 }
-
+	
+	//模块的输出（添加cookie，删除cookie，获取cookie）
+	return {
+		saveCookie:saveCookie,
+		getCookie:getCookie,
+		removeCookie:removeCookie
+	}
+});
 

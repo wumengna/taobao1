@@ -178,6 +178,9 @@ function GetRTime(){
       h=Math.floor(t/1000/60/60%24);
       m=Math.floor(t/1000/60%60);
       s=Math.floor(t/1000%60);
+		h>9?h=h:h='0'+h;
+		m>9?m=m:m='0'+m;
+		s>9?s=s:s='0'+s;
     }
     document.getElementById("h").innerHTML = h ;
     document.getElementById("m").innerHTML = m;

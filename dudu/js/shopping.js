@@ -141,10 +141,10 @@ jQuery.ajax({
 		let obj=eval(data);
 		//alert(data)
 		for(var i in obj){			
-			var goodsPrice=obj[i].goodsPrice;
+			let goodsPrice=obj[i].goodsPrice;
 			let goodsImg=obj[i].goodsImg;
 			let goodsDesc=obj[i].goodsDesc;
-			let beiyong8=obj[i].beiyong8;
+			
 			let beiyong9=obj[i].beiyong9;
 			let beiyong10=obj[i].beiyong10;
 			let goodsName=obj[i].goodsName;			
@@ -154,59 +154,59 @@ jQuery.ajax({
 			let goodsCount=obj[i].goodsCount;
 			let goodsZongjia="￥"+obj[i].goodsPrice*obj[i].goodsCount;
 			//console.log(beiyong2)
-			let str="<ul class='sh1' ord='"+obj[i].goodsId+"'><li><em id='shop1' class='shop1'><img src='"+beiyong8+"'/></em><em id='shop2' class='shop2'><img src='"+beiyong9+"'/></em></li><li><dl><dt><img src='"+goodsImg+"' class='imgs'/></dt><dd><h4 class='h44'><a href='#'>"+goodsDesc+"</a></h4><p><span>颜色：<img src='"+beiyong2+"' class='span1'></span><span class='span2'>尺码：均码</span></p><h3><img src='../imgs/gw2.png'/>品牌商发货 </h3></dd></dl></li><li class='jiage'>￥"+goodsPrice+".00</li><li class='jiajian'><span class='add' id='add'>-</span><b id='li4' class='li4'>"+goodsCount+"</b><span class='minus' id='minu'>+</span></li><li><span><i class='evlPrice'> "+evlPrice+".00</i></span></li><li id='shanchu' class='shanchu'><a href='#'><img src='"+beiyong10+"'/></a></li></ul>";				
+			let str="<ul class='sh1' ord='"+obj[i].goodsId+"'><li><input type='checkbox' class='check1'/></li><li><dl><dt><img src='"+goodsImg+"' class='imgs'/></dt><dd><h4 class='h44'><a href='#'>"+goodsDesc+"</a></h4><p><span>颜色：<img src='"+beiyong2+"' class='span1'></span><span class='span2'>尺码：均码</span></p><h3><img src='../imgs/gw2.png'/>品牌商发货 </h3></dd></dl></li><li class='jiage'>￥"+goodsPrice+".00</li><li class='jiajian'><span class='add' id='add'>-</span><b id='li4' class='li4'>"+goodsCount+"</b><span class='minus' id='minu'>+</span></li><li><span><i class='evlPrice'> "+evlPrice+".00</i></span></li><li id='shanchu' class='shanchu'><a href='#'><img src='"+beiyong10+"'/></a></li></ul>";				
 			jQuery(".jiesuan").append(str);			
 		}
 		//数量加减
-		jQuery(function() {
-					totl();
+			
+			jQuery(function() {
+				totl();
+				adddel();
 			})
 			function totl(){
-				var sum=0;
-				
-				jQuery(".evlPrice").each(function(){
-					
+				var sum=0;				
+				jQuery(".evlPrice").each(function(){					
 					sum+=parseFloat(jQuery(this).html().split("￥")[1]);
 					jQuery("#zongjiage").text("￥"+sum+".00");					
 				})					
-			}		
-			var jians=document.getElementsByClassName("add");
-			var jias=document.getElementsByClassName("minus")
-			//减
-			for(var j in jians){
-				jians[j].onclick=function(){				
-				let count=jQuery(this).next();
-				//alert(count)
-				let num=count.html();
-				//alert(num)
-				num-=1;				
-				if(num<=1){
-					num=1;
-				}
-					count.html(num);
-					evlPrice=parseFloat(num)*parseFloat(jQuery(this).parent().prev().html().split("￥")[1]);
-					jQuery(this).parent().next().text("￥"+Math.round(evlPrice)+".00");
+			}
+			function adddel(){
+				var jians=document.getElementsByClassName("add");
+				var jias=document.getElementsByClassName("minus")
+				//减
+				for(var j in jians){
+					jians[j].onclick=function(){				
+					let count=jQuery(this).next();
+					//alert(count)
+					let num=count.html();
+					//alert(num)
+					num-=1;				
+					if(num<=1){
+						num=1;
+					}
+						count.html(num);
+						evlPrice=parseFloat(num)*parseFloat(jQuery(this).parent().prev().html().split("￥")[1]);
+						jQuery(this).parent().next().text("￥"+Math.round(evlPrice)+".00");					
+					}
 					totl();
-				}				
-			}
-			//加
-			for(var j in jias){
-				jias[j].onclick=function(){
-				let count=jQuery(this).prev();
-				let num=parseInt(count.html());
-				let evlPrice=0;
-					num+=1;
-					
-					count.html(num)
-					evlPrice=num*parseFloat(jQuery(this).parent().prev().html().split("￥")[1]);
-//					alert(evlPrice)
-					jQuery(this).parent().next().text("￥"+Math.round(evlPrice)+".00");
+				}
+				//加
+				for(var j in jias){
+					jias[j].onclick=function(){
+					let count=jQuery(this).prev();
+					let num=parseInt(count.html());
+					let evlPrice=0;
+						num+=1;						
+						count.html(num)
+						evlPrice=num*parseFloat(jQuery(this).parent().prev().html().split("￥")[1]);
+	//					alert(evlPrice)
+						jQuery(this).parent().next().text("￥"+Math.round(evlPrice)+".00");						
+					}	
 					totl()
-				}	
-				
+				}
+				//数量加减结束
 			}
-			//数量加减结束
-			
+	
 			//删除购物车商品
 		jQuery(".sh1").delegate(".shanchu", "click", function(){ 
 			console.log(this)
@@ -225,7 +225,7 @@ jQuery.ajax({
 		});
 	//删除结束
 	
-	//改变数量
+	//改变商品数量
 	//加
 	jQuery(".sh1").on("click",".minus",function(){
 		var counts=jQuery(this).parent().find("#li4").html();
@@ -236,6 +236,8 @@ jQuery.ajax({
 		jQuery.get("../php/updateGoodsCount.php", { "vipName": vipName, "goodsId": goodsId,"goodsCount" :counts},
 			function(data){
 			//console.log(data);
+//			jQuery.get("../php/updateGoodsCount.php", { "vipName": vipName, "goodsId": goodsId,"goodsCount" :counts},
+			
 			})
 						
 		})
@@ -246,17 +248,20 @@ jQuery.ajax({
 		//console.log(counts)
 		var goodsId=jQuery(this).parent().parent().attr("ord")
 		//console.log(goodsId)
-		
+		var sum1=0;
 		jQuery.get("../php/updateGoodsCount.php", { "vipName": vipName, "goodsId": goodsId,"goodsCount" :counts},
 			function(data){
-			//console.log(data);
-				
-				
-			})
-						
+			//console.log(data)					
+			})							
 		})
+	//修改商品结束
 	
-
+	//全选
+		jQuery("#all").click(function(){
+			var sum=0;		
+			jQuery(".sh1 :checkbox").check(this.checked);	
+		})
+	//全选结束
 	}
 });	
 						
